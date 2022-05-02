@@ -15,15 +15,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function calculateHanoi(disksNumber, turnsSpeed) {
-  if (disksNumber == 0)
-  {
-    return;
-  }
-  calculateHanoi(disksNumber - 1, from_rod, aux_rod, to_rod);
-  calculateHanoi(disksNumber -1, aux_rod, to_rod, from_rod);
+  throw new NotImplementedError('Not implemented');
+  // remove line with error and write your code here
 }
-
 
 module.exports = {
   calculateHanoi
 };
+
