@@ -15,14 +15,18 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 
-function countCats(matrix) {
-  let ears = 0;  
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-    if (matrix[i][j] === '^^') {ears++}    
-  }  
-}
-return ears;
+// function countCats(matrix) {
+//   let ears = 0;  
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = 0; j < matrix[i].length; j++) {
+//     if (matrix[i][j] === '^^') {ears++}    
+//   }  
+// }
+// return ears;
+// }
+
+function countCats(matrix) {   
+  return matrix.flat(Infinity).filter((elem) => elem === '^^').length;  
 }
 
 module.exports = {
