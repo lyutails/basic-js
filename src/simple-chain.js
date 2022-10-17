@@ -12,7 +12,14 @@ const chainMaker = {
     chainMaker.add(value);
   },
   removeLink(position) {
-    chainMaker.remove(position);
+    if (Number(position) && position >= 1 && position <= this.storageChain.length) {
+      this.storageChain.splice(position -1, 1);
+      return this;
+    }
+    else {
+      this.storageChain = []
+        throw new Error("You can't remove incorrect link!");      
+    }
   },
   reverseChain() {
     chainMaker.reverse();
