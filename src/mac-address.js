@@ -15,9 +15,16 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function isMAC48Address(n) {
-  if (typeof str != 'string') return false;
-
+  const onlyNumbers = n.split('-');
+  const parsed = parseInt(onlyNumbers, 16);
+  if (parsed <= 256) {
+    return true;
+  }
+  else {
+    return false;
+  }  
 }
+
 module.exports = {
   isMAC48Address
 };

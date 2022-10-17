@@ -15,9 +15,10 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-function repeater(/* str, options */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function repeater(str, options) {
+  //push str and connect with ** (join) - firsth with additions, then with usual without additions (put between ** and str what we had before)
+  const finalString = '';
+  finalString.push(str, '**');
 }
 
 module.exports = {

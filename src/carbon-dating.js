@@ -2,6 +2,7 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
+const LOG_OF_TWO = 0.693;
 
 /**
  * Determine the age of archeological find by using
@@ -17,9 +18,13 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-function dateSample(/* sampleActivity */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function dateSample(sampleActivity) {
+  if (typeof(sampleActivity) === 'string' && typeof(Number(sampleActivity)) && sampleActivity < 15 && sampleActivity > 0) { // /[a-z]/gi or /[a-zA-Z]+/g sampleActivity.match(/[a-z]/gi) or /^[a-zA-Z]+$/
+    return Math.ceil(Math.log(MODERN_ACTIVITY / +sampleActivity) * HALF_LIFE_PERIOD / LOG_OF_TWO);
+  } 
+  else {
+    return false;
+  }
 }
 
 module.exports = {
