@@ -11,10 +11,25 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
-function sortByHeight(arr) {  
-  const withoutOne = arr.filter(elem => elem === -1);
-  withoutOne.sort().
-  arr.indexOf(elem => elem != -1).push   
+function sortByHeight(arr) {
+  function newSort(a, b) {
+    return a - b;
+  }
+
+  let arrPositive = arr.filter(elem => elem > 0).sort(newSort);
+  let sorted = [];
+  let j = 0;
+
+  // replace the positive numbers with sorted numbers
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sorted.push(arrPositive[j++]);
+    } else {
+      sorted.push(arr[i]);
+    }
+  }
+  return sorted;
 }
 
 module.exports = {

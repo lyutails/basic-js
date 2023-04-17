@@ -16,7 +16,9 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function renameFiles(names) {
-  
+  if (i > 1) {
+    names.map(el => el + (i));
+  }
 }
 
 module.exports = {
